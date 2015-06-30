@@ -1,0 +1,199 @@
+/*
+This file is part of owlCMS
+owlCMS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    owlCMS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with owlCMS.  If not, see <http://www.gnu.org/licenses/>.
+ author: Vladimir Kuznetsov (admin@admvk.ru)
+*/
+/* 
+    Created on : 11.06.2015, 0:53:52
+    Author     : manowar
+*/
+
+@import "http://webfonts.ru/import/ubuntu.css";
+@import "http://webfonts.ru/import/philosopher.css";
+@import "editform.css";
+@import "hr.css";
+
+body {
+    background: #dedfe0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+    color: rgba(33,88,160,1);
+}
+
+/* visited link */
+a:visited {
+    color: rgba(33,88,160,1);
+}
+
+/* mouse over link */
+a:hover {
+    color: #8A0829;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2) ;
+}
+
+/* selected link */
+a:active {
+    color: #8A0829;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2) ;
+}
+
+.wrapper {
+    overflow-x: hidden;
+    width: 900px;
+    min-height: 645px;
+    position: relative;
+    top: 10px;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    margin: 0 auto 7px auto;
+    background: #CDCFCE;
+    -webkit-box-shadow: 0 0 5px 2px rgba(0,0,0,0.3) ;
+    box-shadow: 0 0 5px 2px rgba(0,0,0,0.3) ;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.title {
+    position: relative;
+    float: left;
+    display: block;
+    padding: 20px;
+    font-family: 'Ubuntu';
+}
+
+.help {
+    position: relative;
+    float: right;
+    display: block;
+    padding: 20px;
+    font-family: 'Ubuntu';
+}
+
+.clear {
+    clear: both;
+}
+
+.form-articles, .form-chunks {
+    -webkit-box-shadow: 0 0 5px 2px rgba(0,0,0,0.3) ;
+    box-shadow: 0 0 5px 2px rgba(0,0,0,0.3) ;
+    background: #efefef;
+    min-width: 420px;
+    max-width: 420px;
+    margin: 0 5px 10px 5px;
+    font-family: Verdana;
+    line-height: 1.5;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.form-articles {
+    position: relative;
+    float: left;
+    padding: 10px;
+}
+
+.form-chunks {
+    position: relative;
+    float: left;
+    padding: 10px;
+}
+
+.title-block {
+    text-align: center;
+    font-family: 'Ubuntu';
+}
+
+.title-block:hover::after { 
+    content: attr(data-title); 
+}
+
+hr.style-three {
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+}
+
+.topmenu {
+    padding: 5px;
+    text-align: center;
+    border-bottom: 1px solid #999;
+    background-color:#026389;
+    background-image:url(../img/logo.png);
+    background-repeat:no-repeat;
+    background-position:10px 6px;
+    -webkit-border-radius: 5px 5px 0 0;
+    border-radius: 5px 5px 0 0;
+    height: 64px;
+    line-height: 64px;
+    color: #efefef !important;
+    font-family: 'Ubuntu';
+}
+
+.topmenu ul li {
+    list-style: none;
+    display: inline;
+    font-family: 'Ubuntu';
+}
+
+.topmenu li {
+    margin: 10px;
+}
+
+.bottommenu {
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+    text-align: center;
+    border-top: 1px solid #999;
+    background-color:#026389;
+    -webkit-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    color: #efefef !important;
+    font-family: 'Ubuntu';
+}
+
+.bottommenu a, .bottommenu a:visited, .bottommenu a:hover, .bottommenu a:active .bottommenu a:link {
+    color: #efefef !important;
+    text-decoration: none !important;
+    text-shadow: none !important;
+}
+
+.copyright {
+    position: relative;
+    float: right;
+    right: 15px;
+}
+
+.author {
+    position: relative;
+    float: left;
+    left: 5px;
+}

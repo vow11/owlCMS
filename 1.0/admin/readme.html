@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+This file is part of owlCMS
+owlCMS is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    owlCMS is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with owlCMS.  If not, see <http://www.gnu.org/licenses/>.
+ author: Vladimir Kuznetsov (admin@admvk.ru)
+-->
+<html>
+    <head>
+        <title>Справка</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div style="max-width: 800px; font-family: Verdana; margin-left: 5px;"><h2>Справка</h2><br>
+            Тип контента "страницы" и "чанки" отличаются друг от друга тем, 
+            что чанки можно вставлять в код страницы или шаблона в любом месте любое количество раз.<br>
+            При этом в "страницы" и "чанки" можно добавлять любой текст или html-код.<br>
+            "Чанки" можно использовать, например, для создания меню в шаблоне. 
+            Для этого необходимо создать "чанк" с html-кодом меню и вставить его в соответсвующее место в своём шаблоне. 
+            "Чанки" добавляются конструкцией вида: chunk_номерID<br>
+            Этот номер можно посмотреть в панели администрирования рядом с именем соответствующего "чанка".<br><hr>
+            <h3>Создание собственного шаблона</h3><br>
+            Для создания собственного шаблона необходимо сначала в папке templates создать новую папку с произвольным именем. 
+            Имя новой папки должно содержать только символы латиницы и цифры и начинаться с буквы. 
+            Это имя нужно вставлять в поле "Шаблон" при создании страниц.<br>
+            После этого необходимо скопировать из templates/blank все файлы в созданную папку.<br>
+            Можно создавать произвольный шаблон, основная задача заключается в том, чтобы так распределить тэги по файлам header.php и footer.php,
+            чтобы начальный и завершающий тэг места, куда вы планируете вставлять контент "страниц" были разнесены по разным файлам.<br>
+            Например в файле header.php будет: <strong>...начальный код...&lt;div&gt;</strong>, 
+            а в файле footer.php соответственно <strong>&lt;&frasl;div&gt;...конечный код...</strong><br>
+            Вставка своего кода в php файлы должна соответствовать правилам языка PHP. 
+            То есть, необходимо в файле header.php после строчки  <strong>. '&lt;body&gt;';</strong> на новой строке вставить свой код
+            в одинарных кавычках, добавив в начале точку и пробел, а в конце точку с запятой. После &lt;body&gt;' точку с запятой ОБЯЗАТЕЛЬНО убрать!<br>
+            В файле footer.php всё немного  наоборот. Там нужно свой код в одинарных кавычках вставлять после знака =, но до <strong>'&lt;&frasl;body&gt;'</strong>, 
+            при этом <strong>'&lt;&frasl;body&gt;'</strong> надо сместить на одну строчку вниз, а перед ним поставить точку и пробел.<br>
+            <br>Для того, чтобы движок автоматически подставлял относительные пути в ссылки на скрипты, таблицы стилей, картинки, 
+            можно использовать конструкцию вида:<br> 
+            <strong>href="&frasl;templates&frasl;'.$row_template[0].'&frasl;...</strong><br>
+            в файлах header.php и footer.php своего шаблона.<br>
+            Также необходимо учитывать то, что если вы хотите использовать разные шаблоны для разных страниц, 
+            вы должны их создать отдельно каждый и при создании страницы указывать в поле "Шаблон" имя нужного шаблона.
+        </div>
+    </body>
+</html>
